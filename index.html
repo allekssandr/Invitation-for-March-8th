@@ -9,39 +9,68 @@
             font-family: 'Arial', sans-serif;
             background-color: #f0f8ff; /* Светло-голубой фон */
             color: #333;
-            text-align: center;
-            padding: 20px;
-        }
-        .header {
-            background-color: #ffb6c1; /* Светло-розовый */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .header h1 {
             margin: 0;
-            font-size: 2.5em;
-            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Для позиционирования украшений */
         }
         .video-container {
-            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh; /* Видео занимает большую часть экрана */
         }
         video {
             max-width: 90%;
+            max-height: 80vh;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .header {
+            background-color: #ffb6c1; /* Светло-розовый */
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #fff;
         }
         .invitation-text {
             background-color: #fff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 20px 0;
+            margin-top: 20px;
+            font-size: 1.1em;
         }
         .footer {
             margin-top: 20px;
             font-size: 0.9em;
             color: #666;
+        }
+        /* Украшения: цветы и бабочки */
+        .decoration {
+            position: absolute;
+            opacity: 0.7;
+            z-index: -1; /* Позади основного контента */
+        }
+        .flower1 {
+            top: 10%;
+            left: 5%;
+            width: 50px;
+        }
+        .flower2 {
+            bottom: 15%;
+            right: 5%;
+            width: 60px;
+        }
+        .butterfly {
+            top: 20%;
+            right: 10%;
+            width: 40px;
+            transform: rotate(15deg);
         }
     </style>
 </head>
@@ -56,15 +85,18 @@
     </video>
 </div>
 <div class="invitation-text">
-    <p>Дорогая [имя],</p>
     <p>Приглашаем тебя на празднование Международного женского дня!</p>
-    <p><strong>Дата:</strong> 8 марта 2023</p>
+    <p><strong>Дата:</strong> 7 марта 2025</p>
     <p><strong>Время:</strong> 18:00</p>
-    <p><strong>Место:</strong> [адрес]</p>
+    <p><strong>Место:</strong> 310 офис</p>
     <p>Будем рады видеть тебя!</p>
 </div>
 <div class="footer">
-    <p>С наилучшими пожеланиями, [твоё имя]</p>
+    <p>С наилучшими весенними пожеланиями!</p>
 </div>
+<!-- Украшения -->
+<img src="https://cdn-icons-png.flaticon.com/512/2909/2909786.png" alt="Цветок" class="decoration flower1">
+<img src="https://cdn-icons-png.flaticon.com/512/3064/3064956.png" alt="Цветок" class="decoration flower2">
+<img src="https://cdn-icons-png.flaticon.com/512/3064/3064889.png" alt="Бабочка" class="decoration butterfly">
 </body>
 </html>
