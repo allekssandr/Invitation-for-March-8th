@@ -3,26 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мое видео</title>
+    <title>Приглашение на 8 марта</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Светло-голубой фон */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            background-color: #ffb6c1; /* Светло-розовый */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .header h1 {
             margin: 0;
-            background-color: #f0f0f0;
+            font-size: 2.5em;
+            color: #fff;
+        }
+        .video-container {
+            margin: 20px 0;
         }
         video {
             max-width: 90%;
-            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .invitation-text {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
 <body>
+<div class="header">
+    <h1>Приглашение на 8 марта</h1>
+</div>
+<div class="video-container">
     <video controls>
         <source src="video.mp4" type="video/mp4">
         Ваш браузер не поддерживает воспроизведение видео.
     </video>
+</div>
+<div class="invitation-text">
+    <p>Дорогая [имя],</p>
+    <p>Приглашаем тебя на празднование Международного женского дня!</p>
+    <p><strong>Дата:</strong> 8 марта 2023</p>
+    <p><strong>Время:</strong> 18:00</p>
+    <p><strong>Место:</strong> [адрес]</p>
+    <p>Будем рады видеть тебя!</p>
+</div>
+<div class="footer">
+    <p>С наилучшими пожеланиями, [твоё имя]</p>
+</div>
 </body>
 </html>
