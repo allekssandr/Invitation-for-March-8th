@@ -7,35 +7,19 @@ body {
     background-repeat: no-repeat;
     color: #333;
     margin: 0;
-    padding: 20px;
     text-align: center;
     position: relative; /* Для позиционирования украшений */
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh; /* Используем min-height, чтобы контент не обрезался */
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
     display: flex;
     flex-direction: column;
-}
-
-.video-container {
-    align-items: center;
-    flex-basis: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Центрируем содержимое по вертикали */
-}
-
-video {
-    max-width: 90%; /* Увеличим до 90% для мобильных и десктопов */
-    max-height: 60vh; /* Ограничим высоту видео */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    justify-content: center; /* Центрируем весь контент по вертикали */
 }
 
 .header-container {
-    flex-basis: 27%;
-    align-content: center;
-    visibility: hidden;
+    flex-basis: 25vh; /* Убираем место для заголовка, если он скрыт */
+    visibility: hidden; /* Скрываем заголовок */
 }
 
 .header-container h1 {
@@ -44,47 +28,52 @@ video {
     color: #fd7dd6;
 }
 
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Позволяем видео и тексту занимать доступное место */
+    gap: 0.7em;
+    padding-left: 2.5em;
+}
+
+video {
+    max-height: 38vh; /* Ограничим высоту для мобильных */
+    border-radius: 10px;
+}
+
 .text-container {
-    color: #4a2c2a; /* Тёмно-бордовый цвет текста */
-    font-family: 'Playfair Display', serif; /* Элегантный шрифт с засечками */
-    font-size: 1.2em; /* Чуть больше для торжественности */
-    font-weight: 600; /* Полужирный для акцента */
-    padding: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    max-width: 90%;
 }
 
 .footer {
-    flex-basis: 20%;
+    flex-basis: 21vh;
+    visibility: hidden;
     font-size: 0.9em;
     color: #ff4dfb;
-    visibility: hidden;
+}
+
+.you {
+    color: #cb42a7;
 }
 
 /* Медиа-запрос для мобильных устройств (ширина до 768px) */
 @media (max-width: 768px) {
-    body {
-        padding: 10px; /* Уменьшим отступы */
-    }
-
     .video-container {
-        flex-basis: auto; /* Убираем фиксированную высоту */
-        flex-grow: 1; /* Позволяем контейнеру занимать доступное место */
+        padding-left: 0; /* Убираем отступы для мобильных */
+    }
+    video {
+        max-height: 26vh; /* Уменьшаем высоту для компактности */
     }
 
-    video {
-        max-width: 100%; /* Видео занимает всю ширину на мобильных */
-        max-height: 50vh; /* Уменьшаем высоту для компактности */
+    .header-container {
+        flex-basis: 32vh;
     }
 
     .text-container {
         font-size: 1em; /* Уменьшаем шрифт для читаемости */
-        padding: 10px 0; /* Добавим немного пространства */
-    }
-
-    .header-container {
-        flex-basis: 15%; /* Уменьшаем место для заголовка */
-    }
-
-    .footer {
-        flex-basis: 15%; /* Уменьшаем место для футера */
     }
 }
