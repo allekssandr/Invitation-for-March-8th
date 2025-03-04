@@ -22,10 +22,12 @@ body {
     flex-basis: 60%;
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Центрируем содержимое по вертикали */
 }
 
 video {
-    max-width: 32%;
+    max-width: 90%; /* Увеличим до 90% для мобильных и десктопов */
+    max-height: 60vh; /* Ограничим высоту видео */
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
@@ -55,4 +57,34 @@ video {
     font-size: 0.9em;
     color: #ff4dfb;
     visibility: hidden;
+}
+
+/* Медиа-запрос для мобильных устройств (ширина до 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Уменьшим отступы */
+    }
+
+    .video-container {
+        flex-basis: auto; /* Убираем фиксированную высоту */
+        flex-grow: 1; /* Позволяем контейнеру занимать доступное место */
+    }
+
+    video {
+        max-width: 100%; /* Видео занимает всю ширину на мобильных */
+        max-height: 50vh; /* Уменьшаем высоту для компактности */
+    }
+
+    .text-container {
+        font-size: 1em; /* Уменьшаем шрифт для читаемости */
+        padding: 10px 0; /* Добавим немного пространства */
+    }
+
+    .header-container {
+        flex-basis: 15%; /* Уменьшаем место для заголовка */
+    }
+
+    .footer {
+        flex-basis: 15%; /* Уменьшаем место для футера */
+    }
 }
