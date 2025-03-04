@@ -13,7 +13,7 @@
 </div>
 <div class="video-container">
     <video controls autoplay loop>
-        <source src="./video/video_2.mp4" type="video/mp4">
+        <source src="./video/video_2.mp4" id="videoSource" type="video/mp4">
         Ваш браузер не поддерживает воспроизведение видео.
     </video>
     <div class="text-container">
@@ -27,5 +27,18 @@
 <div class="footer">
     <p><i>С наилучшими весенними пожеланиями!</i></p>
 </div>
+<script>
+    // Генерируем случайное число (0 или 1)
+    const randomNumber = Math.floor(Math.random() * 2) + 1;
+    const videoSrc = `./video/video_${randomNumber}.mp4`;
+
+    // Находим элемент <source> и задаём ему атрибут src
+    const videoSource = document.getElementById('videoSource');
+    videoSource.setAttribute('src', videoSrc);
+
+    // Перезагружаем видео, чтобы оно подхватило новый источник
+    const video = document.querySelector('video');
+    video.load(); // Это важно для применения изменений
+</script>
 </body>
 </html>
