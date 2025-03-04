@@ -38,7 +38,7 @@ body {
 }
 
 video {
-    max-height: 38vh; /* Ограничим высоту для мобильных */
+    height: 38vh; /* Ограничим высоту для мобильных */
     border-radius: 10px;
 }
 
